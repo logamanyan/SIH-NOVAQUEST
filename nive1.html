@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nive1.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Lunar Image</title>
+    <link rel="stylesheet" href="nive2.css">
+</head>
+<body>
+    <div class="background">
+        <div class="upload-container">
+            <h2>Upload Your Lunar Image</h2>
+            <!-- Custom file upload button -->
+<label for="imageUpload" class="custom-file-upload">Choose Image</label>
+<input type="file" id="imageUpload" accept="image/*" style="display:none;">
+
+<div id="comparisonDashboard" style="display:none;">
+    <h3>Comparison Dashboard</h3>
+    <div class="image-comparison">
+        <div>
+            <h4>Input Image</h4>
+            <img id="inputImage" src="" alt="Input Image">
+        </div>
+        <div>
+            <h4>BM3D Output</h4>
+            <img id="bm3dImage" src="" alt="BM3D Output Image">
+        </div>
+        <div>
+            <h4>Retinex Output</h4>
+            <img id="retnixImage" src="" alt="Retinex Output Image">
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+     <!-- Content of the second section -->
+          <!-- New Description Section added after down2 -->
+         <div class="description-section">
+             <h2>Why Analyze Lunar Images?</h2>
+             <p>
+                 Analyzing lunar images is crucial for understanding the moon's surface and selecting safe landing sites for space missions. By enhancing images captured in low-light conditions, like those in Permanently Shadowed Regions (PSRs), we can gain critical insights into lunar geology and potential resources.
+             </p>
+             <p>
+                 Our tool helps to improve the quality of lunar images using advanced image processing techniques, making it easier to interpret the data and make informed decisions about lunar exploration.
+             </p>
+         </div>
+
+    
+    <script src="nive.js"></script>
+</body>
+</html>

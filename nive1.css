@@ -1,0 +1,323 @@
+/* Import Orbitron font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+/* Apply Orbitron font to all elements and set default styles */
+* {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+/* Main background section */
+.background {
+    background-image: url('lunar_craters_moon_4k.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff84d8;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adding a dynamic overlay for better readability and visual appeal */
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    backdrop-filter: blur(3px);
+    z-index: 1;
+    animation: gradientShift 10s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.background * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Styling the second background section */
+#down2 {
+    min-height: 100vh;
+    background-image: url('thumb-2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#down2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(76, 0, 130, 0.6), rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+/* Upload container */
+.upload-container {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    position: relative;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 90%;
+    width: 500px;
+}
+
+.upload-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+/* Upload button styling */
+#imageUpload, .custom-file-upload {
+    padding: 14px 28px;
+    background-color: #8a2be2;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    font-weight: 500;
+}
+
+/* Hover effect for buttons */
+#imageUpload:hover, .custom-file-upload:hover {
+    background-color: #9b4dff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+}
+
+/* Comparison dashboard styling */
+#comparisonDashboard {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    max-width: 90%;
+    width: 800px;
+}
+
+/* Image comparison layout */
+.image-comparison {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Styling comparison images */
+.image-comparison img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 3px solid #8a2be2;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+/* Hover effect for images */
+.image-comparison img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+}
+
+/* Input styling */
+input {
+    border-radius: 30px;
+    height: 50px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #8a2be2;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Input focus effect */
+input:focus {
+    box-shadow: 0 8px 25px rgba(138, 43, 226, 0.25);
+    outline: none;
+    border-color: #9b4dff;
+}
+
+/* Hide the actual file input */
+input[type="file"] {
+    display: none;
+}
+
+/* Smooth scroll effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Description section styling with enhanced transparency and visual appeal */
+.description-section {
+    padding: 60px 20px;
+    background: url(lunar_craters_moon_4k_description.jpg) center/cover no-repeat;
+    color: #f0f0f0;
+    text-align: center;
+    margin: 60px auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 90%;
+    width: 800px;
+}
+
+.description-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    z-index: 1;
+    filter: blur(5px); /* Subtle blur effect */
+
+}
+
+.description-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.description-section:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.description-section h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    margin-bottom: 30px;
+    color: transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    background: linear-gradient(to right,  #930b32, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+.description-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #930b32, #8a2be2);
+
+    margin: 20px auto 0;
+    border-radius: 6px;
+}
+
+.description-section p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    line-height: 1.9;
+    margin: 0 auto;
+    max-width: 800px;
+    color: #e0e0e0;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+}
+
+.description-section p:hover {
+    color: #e5acd9;
+    transition: color 0.3s ease;
+}
+
+/* Adding a subtle star field effect to the background */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, #ffffff 1px, transparent 1px),
+        radial-gradient(circle, #ffffff 1px, transparent 1px);
+    background-size: 50px 50px, 100px 100px;
+    background-position: 0 0, 25px 25px;
+    animation: twinkle 4s infinite;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .upload-container, #comparisonDashboard, .description-section {
+        width: 95%;
+    }
+
+    .image-comparison img {
+        max-width: 100%;
+    }
+
+    input {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .upload-container {
+        padding: 20px;
+    }
+
+    #imageUpload, .custom-file-upload {
+        padding: 12px 20px;
+    }
+}

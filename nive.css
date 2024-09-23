@@ -1,0 +1,119 @@
+/* General page styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+}
+
+/* Video container styling */
+.video-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Ensure the video covers the background fully */
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures proper video fit */
+    z-index: -1;
+    filter: blur(2px); /* Subtle blur effect */
+}
+
+/* Adding a gradient overlay to make the text more readable */
+.video-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    z-index: 0;
+}
+
+/* Content centering and text shadow for better visibility */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Refined text shadow */
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Text animation for smooth entry */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Adjusting the font size for large and small screens */
+.lunar-font {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+/* Zoom-in animation for the text */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .lunar-font {
+        font-size: 3rem; /* Smaller font for mobile */
+    }
+}
+
+/* Button styling for modern look */
+.next-btn {
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 50px; /* Rounded button for a modern look */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background-image: linear-gradient(to right, #930b32, #8a2be2); /* Gradient for button */
+}
+
+/* Button hover effect with glow */
+.next-btn:hover {
+    background-color: #333;
+    color: #fff;
+    transform: translateY(-5px); /* Adds a hover lift effect */
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4), 0 0 10px #fff; /* Glow effect on hover */
+}
+
+/* Adding responsive font scaling */
+@media (max-width: 768px) {
+    .next-btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
